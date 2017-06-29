@@ -1,0 +1,4 @@
+prototype(CORE4.Neos.FusionForms:FormElementValidator) < prototype(Neos.Fusion:RawArray) {
+    identifier = ''
+    options = Neos.Fusion:RawArray
+}

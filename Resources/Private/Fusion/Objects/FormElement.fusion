@@ -1,0 +1,8 @@
+prototype(CORE4.Neos.FusionForms:FormElement) < prototype(Neos.Fusion:Template) {
+    @class = 'CORE4\\Neos\\FusionForms\\Fusion\\FusionObjects\\FormElementImplementation'
+
+    identifier = ''
+    value = ${this.value}
+    validationResults = ${this.validationResults}
+    validators = Neos.Fusion:RawArray
+}

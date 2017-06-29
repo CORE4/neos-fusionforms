@@ -1,0 +1,18 @@
+prototype(CORE4.Neos.FusionForms:Form) < prototype(Neos.Fusion:Template) {
+    @class = 'CORE4\\Neos\\FusionForms\\Fusion\\FusionObjects\\FormImplementation'
+    formRuntime = ${this.formRuntime}
+
+    identifier = ''
+    configuration = Neos.Fusion:RawArray
+    pages = Neos.Fusion:RawArray
+    finishers = Neos.Fusion:RawArray
+
+    @cache {
+        mode = 'uncached'
+        context {
+            site = 'site'
+            documentNode = 'documentNode'
+            node = 'node'
+        }
+    }
+}

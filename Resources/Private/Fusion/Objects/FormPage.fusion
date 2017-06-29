@@ -1,0 +1,6 @@
+prototype(CORE4.Neos.FusionForms:FormPage) < prototype(Neos.Fusion:Template) {
+    @class = 'CORE4\\Neos\\FusionForms\\Fusion\\FusionObjects\\FormPageImplementation'
+
+    identifier = ''
+    elements = Neos.Fusion:Array
+}
