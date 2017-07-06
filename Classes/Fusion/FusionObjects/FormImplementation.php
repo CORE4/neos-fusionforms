@@ -63,7 +63,11 @@ class FormImplementation extends FormTemplateImplementation
         );
         $form->setRendererClassName(NullRenderer::class);
         foreach ($this->fusionValue('finishers') as $finisherConfiguration) {
-            $form->createFinisher($finisherConfiguration['identifier'], $finisherConfiguration['options']);
+            if (class_exists($finisherConfiguration['class'])) {
+                $form->addFinisher(new $finisherConfiguration['class']($finisherConfiguration['options']));
+            } else {
+                $form->createFinisher($finisherConfiguration['identifier'], $finisherConfiguration['options']);
+            }
         }
 
         return $form;

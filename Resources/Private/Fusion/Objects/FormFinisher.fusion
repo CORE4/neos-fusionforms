@@ -1,4 +1,5 @@
 prototype(CORE4.Neos.FusionForms:FormFinisher) < prototype(Neos.Fusion:RawArray) {
     identifier = ''
+    class = ''
     options = Neos.Fusion:RawArray
 }

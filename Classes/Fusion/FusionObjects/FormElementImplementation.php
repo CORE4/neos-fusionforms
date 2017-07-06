@@ -30,7 +30,11 @@ class FormElementImplementation extends FormTemplateImplementation
             }
 
             foreach ($this->fusionValue('validators') as $validatorConfiguration) {
-                $formElement->createValidator($validatorConfiguration['identifier'], $validatorConfiguration['options']);
+                if (class_exists($validatorConfiguration['class'])) {
+                    $formElement->addValidator(new $validatorConfiguration['class']($validatorConfiguration['options']));
+                } else {
+                    $formElement->createValidator($validatorConfiguration['identifier'], $validatorConfiguration['options']);
+                }
             }
         }
         return parent::evaluate();
